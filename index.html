@@ -1,19 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu site - Versão Final</title>
-  <style>`
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-family: system-ui, "Segoe UI", Roboto, sans-serif;
-      background: #FFC0CB;
+      background: #2196F3;
       padding: 1rem;
     }
+
     .cartao {
       background: #fff;
       border-radius: 20px;
@@ -24,8 +32,16 @@
       text-align: center;
       color: #1d1d1f;
     }
-    .emoji { font-size: 4rem; }
-    h1 { margin: .5rem 0; color: #6e6e73; }
+
+    .emoji {
+      font-size: 4rem;
+    }
+
+    h1 {
+      margin: .5rem 0;
+      color: #6e6e73;
+    }
+
     .versao {
       margin-top: 1.5rem;
       padding: 1rem;
@@ -34,6 +50,7 @@
       text-align: left;
       line-height: 1.8;
     }
+
     .botao {
       border: 0;
       border-radius: 10px;
@@ -44,26 +61,54 @@
       font-weight: 700;
       cursor: pointer;
     }
-    .botao:hover { background: #3a3a3c; }
-    .status { min-height: 1.5rem; color: #6e6e73; }
-    code { background: #e5e5ea; padding: 2px 6px; border-radius: 6px; }
-    footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #e5e5ea; color: #6e6e73; font-size: .85rem; }
+
+    .botao:hover {
+      background: #3a3a3c;
+    }
+
+    .status {
+      min-height: 1.5rem;
+      color: #6e6e73;
+    }
+
+    code {
+      background: #e5e5ea;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e5ea;
+      color: #6e6e73;
+      font-size: .85rem;
+    }
   </style>
 </head>
+
 <body>
   <main class="cartao">
-    <div class="emoji"> 🏁</div>
+    <div class="emoji">🏁</div>
+
     <h1>Versão Final</h1>
+
     <p>Este site foi descontinuado em 17/11/2026. Obrigado!</p>
 
-    <button class="botao" id="publicar" type="button">🚀 Simular nova publicação</button>
-    <p class="status" id="status" aria-live="polite">Aguardando o primeiro teste...</p>
+    <button class="botao" id="publicar" type="button">
+      🚀 Simular nova publicação
+    </button>
+
+    <p class="status" id="status" aria-live="polite">
+      Aguardando o primeiro teste...
+    </p>
 
     <div class="versao">
       🤖 <strong>Publicado pelo robô em:</strong> __DATA__<br>
       🔖 <strong>Commit:</strong> <code id="commit">__COMMIT__</code><br>
       👤 <strong>Enviado por:</strong> __AUTOR__<br>
-      🔁 <strong>Execuções nesta página:</strong> <span id="contador">0</span>
+      🔁 <strong>Execuções nesta página:</strong>
+      <span id="contador">0</span>
     </div>
 
     <footer>
@@ -71,11 +116,13 @@
       Prof. Marcelino Dias da Silva
     </footer>
   </main>
+
   <script>
     const botao = document.querySelector('#publicar');
     const status = document.querySelector('#status');
     const contador = document.querySelector('#contador');
     const commit = document.querySelector('#commit');
+
     let execucoes = 0;
 
     botao.addEventListener('click', () => {
@@ -87,3 +134,4 @@
   </script>
 </body>
 </html>
+
